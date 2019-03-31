@@ -604,7 +604,7 @@ function returnInTextMode(){
 function mouseDown(e) {
     var eX = e.touches[0].clientX;
     var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-    alert(eX+' '+w);
+    alert   (eX+' '+w);
     if(eX<w/3){
         left = true;
     }
@@ -629,9 +629,8 @@ function mouseUp(e){
 
 // document.onmousedown = mouseDown;
 // document.onmouseup = mouseUp;
-document.touchstart = mouseDown;
-document.touchend = mouseUp;
-
+canvas.addEventListener('touchstart', mouseDown(e), false);
+canvas.addEventListener('touchend', mouseUp(e), false);
 
 document.onkeyup = checkKeyUp;
 function checkKeyUp(e) {
