@@ -604,7 +604,7 @@ function returnInTextMode(){
 function mouseDown(e) {
     var eX = e.touches[0].clientX;
     var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-    console.log(eX+' '+w);
+    alert(eX+' '+w);
     if(eX<w/3){
         left = true;
     }
