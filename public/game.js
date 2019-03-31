@@ -629,8 +629,8 @@ function mouseUp(e){
 
 // document.onmousedown = mouseDown;
 // document.onmouseup = mouseUp;
-canvas.addEventListener('touchstart', mouseDown(e), false);
-canvas.addEventListener('touchend', mouseUp(e), false);
+canvas.addEventListener('touchstart', function(e){mouseDown(e)}, false);
+canvas.addEventListener('touchend', function(e){mouseUp(e)}, false);
 
 document.onkeyup = checkKeyUp;
 function checkKeyUp(e) {
