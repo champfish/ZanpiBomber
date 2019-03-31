@@ -1,6 +1,6 @@
 const path = require('path')
 const express = require('express')
-const port = 80
+const port = 3000
 
 var app = express();
 
