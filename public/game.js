@@ -602,14 +602,16 @@ function returnInTextMode(){
 
 
 function mouseDown(e) {
+    console.log(e.clientX+' '+w);
+    var eX = e.touches[0].clientX;
     var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-    if(e.clientX<w/3){
+    if(eX<w/3){
         left = true;
     }
-    if(e.clientX>2*w/3){
+    if(eX>2*w/3){
         right = true;
     }
-    if(e.clientX>w/3 && e.clientX<2*w/3){
+    if(eX>w/3 && eX<2*w/3){
         if(!textMode){
             space = true;
         }else if(finishedIntro && !initStarted){
@@ -625,9 +627,10 @@ function mouseUp(e){
     right = false;
 }
 
-document.onmousedown = mouseDown;
-document.onmouseup = mouseUp;
-
+// document.onmousedown = mouseDown;
+// document.onmouseup = mouseUp;
+document.touchstart = mouseDown;
+document.touchend = mouseUp;
 
 
 document.onkeyup = checkKeyUp;
